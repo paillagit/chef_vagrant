@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = " reelio/trusty32"
+  config.vm.box = "reelio/trusty32"
   config.vm.network "public_network", :bridge => "eth0", ip:"192.168.1.150", :auto_config => "false", :netmask => "255.255.255.0"
   config.vm.provision :shell, :inline => "sudo route add default gw 192.168.1.1"
   config.vm.network :forwarded_port, guest: 80, host: 8888
